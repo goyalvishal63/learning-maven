@@ -5,7 +5,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class HelloWorldController {
@@ -24,4 +24,9 @@ public class HelloWorldController {
 			model.addAttribute("message","Welcome again from Spring MVC <br>Miss "+user);
 		return "welcome";
 	}
+	/*
+	 * @RequestMapping(value = "/hi", method = RequestMethod.GET) public String
+	 * hiUser(@RequestParam("name") String name,ModelMap model) {
+	 * model.addAttribute("message","Welcome "+name); return "welcome"; }
+	 */
 }

@@ -2,21 +2,19 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.isf.ericsson.dao.StudentDao">
-	<resultMap id="studentsMap" type="StudentModel" >
+<mapper namespace="com.ericsson.isf.mapper.StudentMapper">
+	<resultMap id="studentsMap" type="com.ericsson.isf.model.StudentModel" >
 		<id column="rollno" property="rollNumber"  />
 		<result column="name" property="name" />
 		<result column="email" property="email" />
 	</resultMap>
 
-	<select id="getStudentByRollNo" resultMap="studentsMap" parameterType="Integer">
+	<select id="getStudentByRollNo" resultMap="studentsMap" parameterType="Long">
 		SELECT
-			rollno,
-			name,
-			email
+			*
 		FROM
-			student
+			Student
 		WHERE
-			#{rollno};
+			rollno = #{rollno};
 	</select>
 </mapper>

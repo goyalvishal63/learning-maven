@@ -1,1 +1,8 @@
-C:\Users\eglxvsh\Work\learning-maven\src\main\java\com\ericsson\isf\controller\HelloWorldController.java
+C:\MyOwnProject\trunk\src\main\java\com\ericsson\isf\controller\HelloWorldController.java
+C:\MyOwnProject\trunk\src\main\java\com\ericsson\isf\controller\StudentController.java
+C:\MyOwnProject\trunk\src\main\java\com\ericsson\isf\mapper\StudentMapper.java
+C:\MyOwnProject\trunk\src\main\java\com\ericsson\isf\service\impl\StudentServiceImpl.java
+C:\MyOwnProject\trunk\src\main\java\com\ericsson\isf\model\StudentModel.java
+C:\MyOwnProject\trunk\src\main\java\com\ericsson\isf\dao\impl\StudentDaoImpl.java
+C:\MyOwnProject\trunk\src\main\java\com\ericsson\isf\dao\StudentDao.java
+C:\MyOwnProject\trunk\src\main\java\com\ericsson\isf\service\StudentService.java
