@@ -22,7 +22,7 @@ public class StudentServiceImpl implements StudentService {
 	}
 
 	@Override
-	public void create(StudentModel student) {
+	public void create(StudentModel student) throws IOException {
 		StudentDao.create(student);
 	}
 

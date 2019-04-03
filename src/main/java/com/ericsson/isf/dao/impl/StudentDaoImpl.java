@@ -8,14 +8,24 @@ import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.bson.Document;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.stereotype.Repository;
 import com.ericsson.isf.dao.StudentDao;
 import com.ericsson.isf.mapper.StudentMapper;
-import com.ericsson.isf.model.StudentModel;;
+import com.ericsson.isf.model.StudentModel;
+import com.mongodb.DB;
+import com.mongodb.DBCollection;
+import com.mongodb.MongoClient;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;;
 
 @Repository
 public class StudentDaoImpl implements StudentDao{
 	
+	@Autowired
+	MongoOperations mongoOperations;
 		
 	@Override
 	public StudentModel getStudentByRollNo(long rollno) throws IOException{
@@ -27,8 +37,16 @@ public class StudentDaoImpl implements StudentDao{
 	}
 
 	@Override
-	public void create(StudentModel student) {
-		
+	public void create(StudentModel student) throws IOException {
+		/*
+		 * Reader reader = Resources.getResourceAsReader("SqlMapConfig.xml");
+		 * SqlSessionFactory sqlSessionFactory = new
+		 * SqlSessionFactoryBuilder().build(reader); SqlSession session =
+		 * sqlSessionFactory.openSession(); StudentMapper mapper =
+		 * session.getMapper(StudentMapper.class); mapper.saveStudent(student);
+		 * session.commit();
+		 */
+		mongoOperations.save(student,"Student");
 	}
 
 	@Override

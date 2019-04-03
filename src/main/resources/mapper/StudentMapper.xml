@@ -7,6 +7,7 @@
 		<id column="rollno" property="rollNumber"  />
 		<result column="name" property="name" />
 		<result column="email" property="email" />
+		<result column="stream" property="stream"/>
 	</resultMap>
 
 	<select id="getStudentByRollNo" resultMap="studentsMap" parameterType="Long">
@@ -17,4 +18,9 @@
 		WHERE
 			rollno = #{rollno};
 	</select>
+	<insert id="saveStudent">
+  		insert into Student (rollno,name,email,stream)
+  		values (#{studentData.rollNumber},#{studentData.name},
+  		#{studentData.email},#{studentData.stream})
+	</insert>
 </mapper>
